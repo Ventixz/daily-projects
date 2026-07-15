@@ -6,14 +6,14 @@ A practice project every day, drawn at random from
 ## How this repo works, honestly
 
 **The briefs and scaffolds in this repo are generated automatically.** A scheduled
-GitHub Action runs each day at 1:00 PM, picks one project from the list, and commits
-a dated folder containing:
+routine runs each day at 1:00 PM, picks one project from the list, and commits a
+dated folder containing:
 
 - `BRIEF.md` — what to build, what it teaches, setup steps, milestones
 - a minimal runnable skeleton for that language (a hello-world that executes)
 - `reference/` — a working implementation, also AI-written
 
-Those commits are authored by `github-actions[bot]`, because a bot wrote them.
+Those commits are authored by `daily-project-routine`, because a bot wrote them.
 
 **The implementations under each project root are mine.** That's the point of the
 repo — the brief tells me what to build, and I build it. Those commits are authored
