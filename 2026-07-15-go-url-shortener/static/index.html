@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL Shortener</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 640px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.4rem; }
+    form { display: flex; gap: 0.5rem; margin: 1.5rem 0; }
+    input[type="url"] {
+      flex: 1;
+      padding: 0.6rem 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #8888;
+      border-radius: 6px;
+      background: transparent;
+      color: inherit;
+    }
+    button {
+      padding: 0.6rem 1.1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #1d4ed8; }
+    #result { margin: 1rem 0; min-height: 1.5rem; }
+    #result a { word-break: break-all; }
+    #error { color: #dc2626; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.4rem 0.3rem; border-bottom: 1px solid #8884; }
+    td.url, th.url { max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <h1>URL Shortener</h1>
+  <p>Paste a long URL, get a short one back. Built with Go's standard library only.</p>
+
+  <form id="shorten-form">
+    <input type="url" id="url-input" placeholder="https://example.com/a/very/long/path" required>
+    <button type="submit">Shorten</button>
+  </form>
+
+  <div id="result"></div>
+  <div id="error"></div>
+
+  <table>
+    <thead>
+      <tr><th>Code</th><th class="url">URL</th><th>Clicks</th></tr>
+    </thead>
+    <tbody id="links-body"></tbody>
+  </table>
+
+  <script>
+    const form = document.getElementById('shorten-form');
+    const urlInput = document.getElementById('url-input');
+    const result = document.getElementById('result');
+    const errorBox = document.getElementById('error');
+    const linksBody = document.getElementById('links-body');
+
+    async function loadLinks() {
+      const res = await fetch('/api/links');
+      const links = await res.json();
+      linksBody.innerHTML = '';
+      for (const link of links) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td><a href="/${link.code}" target="_blank">${link.code}</a></td>
+          <td class="url" title="${link.url}">${link.url}</td>
+          <td>${link.clicks}</td>
+        `;
+        linksBody.appendChild(row);
+      }
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox.textContent = '';
+      result.textContent = '';
+
+      const res = await fetch('/api/shorten', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: urlInput.value }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        errorBox.textContent = data.error || 'something went wrong';
+        return;
+      }
+
+      result.innerHTML = `Short link: <a href="${data.short_url}" target="_blank">${data.short_url}</a>`;
+      urlInput.value = '';
+      loadLinks();
+    });
+
+    loadLinks();
+  </script>
+</body>
+</html>
