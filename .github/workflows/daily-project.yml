@@ -1,0 +1,64 @@
+name: Daily project
+
+on:
+  # 05:00 UTC == 13:00 Asia/Manila (UTC+8). GitHub cron is always UTC.
+  # Note: GitHub delays scheduled runs under load — expect 1:00-1:20 PM, not 1:00 sharp.
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-project
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Fetch the project list
+        run: |
+          curl -fsSL \
+            https://raw.githubusercontent.com/practical-tutorials/project-based-learning/master/README.md \
+            -o /tmp/pbl-readme.md
+          wc -c /tmp/pbl-readme.md
+
+      - name: Stamp today's date
+        run: |
+          echo "TODAY=$(TZ=Asia/Manila date +%F)" >> "$GITHUB_ENV"
+          TZ=Asia/Manila date +%F > /tmp/today.txt
+
+      - name: Generate today's project
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude -p "$(cat .github/prompts/daily-project.md)" \
+            --model claude-opus-4-8 \
+            --allowedTools "Read,Write,Edit,Glob,Grep" \
+            --permission-mode acceptEdits
+
+      - name: Commit and push
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --staged --quiet; then
+            echo "Nothing generated — failing so the run is visible rather than silently green."
+            exit 1
+          fi
+          SUMMARY=$(cat /tmp/summary.txt 2>/dev/null || echo "see BRIEF.md")
+          git commit -m "Daily project: $TODAY" -m "$SUMMARY"
+          git push
