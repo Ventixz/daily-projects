@@ -1,0 +1,12 @@
+# Every non-comment line is a statement: either an assignment or an
+# expression whose value gets printed.
+3 + 4 * 2
+(3 + 4) * 2
+radius = 4
+area = 3.14159 * radius * radius
+-5 + -5
+7 / 2
+principal = 1000
+rate = 5
+years = 3
+principal * (1 + rate / 100 * years)
