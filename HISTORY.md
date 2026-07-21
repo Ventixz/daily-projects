@@ -11,3 +11,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | Date | Language | Project | Status |
 |------|----------|---------|--------|
 | 2026-07-15 | Go | URL Shortener | done |
+| 2026-07-21 | C | Hash Table | done |
