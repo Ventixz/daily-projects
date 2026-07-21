@@ -1,0 +1,4 @@
+hash_table_demo
+run_tests
+*.o
+*.dSYM/
