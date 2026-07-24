@@ -14,3 +14,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-07-21 | C | Hash Table | done |
 | 2026-07-22 | Rust | Linked List | done |
 | 2026-07-23 | Python | Game of Life | done |
+| 2026-07-24 | Ruby | Redis Server | done |
