@@ -16,3 +16,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-07-23 | Python | Game of Life | done |
 | 2026-07-24 | Ruby | Redis Server | done |
 | 2026-07-25 | JavaScript | Snake | done |
+| 2026-07-26 | Java | Interpreter | done |
