@@ -1,0 +1,46 @@
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.site-title {
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #8883;
+}
+
+.date {
+    color: #888;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+footer {
+    margin-top: 3rem;
+    color: #888;
+    font-size: 0.85rem;
+}
