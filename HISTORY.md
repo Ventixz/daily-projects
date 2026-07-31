@@ -20,3 +20,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-07-27 | PHP | Flat-File Blog | done |
 | 2026-07-28 | C++ | CHIP-8 Emulator | done |
 | 2026-07-29 | Lua | LC-3 Virtual Machine | done |
+| 2026-07-31 | Go | Unix Shell | done |
