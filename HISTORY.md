@@ -22,3 +22,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-07-29 | Lua | LC-3 Virtual Machine | done |
 | 2026-07-31 | Go | Unix Shell | done |
 | 2026-08-01 | TypeScript | Simple Database | done |
+| 2026-08-02 | C | Memory Allocators 101 | done |
