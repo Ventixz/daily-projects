@@ -24,3 +24,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-01 | TypeScript | Simple Database | done |
 | 2026-08-02 | C | Memory Allocators 101 | done |
 | 2026-08-03 | Ruby | Rebuilding Git | done |
+| 2026-08-04 | Rust | Terminal Text Editor | done |
