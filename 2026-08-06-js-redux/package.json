@@ -1,0 +1,11 @@
+{
+  "name": "js-redux-clone",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A from-scratch Redux clone: createStore, combineReducers, applyMiddleware, compose.",
+  "scripts": {
+    "test": "node --test tests/",
+    "demo": "node examples/todo-demo.js"
+  }
+}
