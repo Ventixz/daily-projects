@@ -28,3 +28,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-05 | Python | Simple Blockchain | done |
 | 2026-08-06 | JavaScript | Build Yourself a Redux | done |
 | 2026-08-07 | Haskell | Write Yourself a Scheme in 48 Hours | done |
+| 2026-08-08 | C++ | Understandable RayTracing in 256 lines | done |
