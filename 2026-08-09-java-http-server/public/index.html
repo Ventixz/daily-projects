@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>From-Scratch HTTP Server</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>It's a raw socket, all the way down.</h1>
+  <p>This page, its stylesheet, and the two <code>/api</code> routes below are all served by
+     <code>HttpServer</code> -- no servlet container, no <code>com.sun.net.httpserver</code>,
+     just a <code>ServerSocket</code> and hand-rolled HTTP/1.1 parsing.</p>
+  <ul>
+    <li><a href="/api/time">/api/time</a> -- current server time as JSON</li>
+    <li><a href="/api/echo?msg=hello">/api/echo?msg=hello</a> -- echoes a query param as JSON</li>
+    <li><a href="/about.html">/about.html</a> -- a second static page, different content type story</li>
+    <li><a href="/missing.html">/missing.html</a> -- 404 demo</li>
+  </ul>
+</body>
+</html>
