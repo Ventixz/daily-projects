@@ -1,0 +1,10 @@
+kalc
+run_tests
+runtime.o
+*.cmi
+*.cmx
+*.o
+examples/*.ll
+examples/fib
+examples/primes
+examples/collatz
