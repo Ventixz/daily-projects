@@ -1,0 +1,9 @@
+extern print_int(x);
+
+def fib(n) =
+  if n < 2 then n
+  else fib(n - 1) + fib(n - 2);
+
+def main() =
+  for i = 0, 15 in
+    print_int(fib(i));
