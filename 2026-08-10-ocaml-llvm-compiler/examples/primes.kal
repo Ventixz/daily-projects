@@ -1,0 +1,16 @@
+extern print_int(x);
+
+# Kal has no modulo operator, so "n mod d" is spelled out by hand:
+# n - (n / d) * d, relying on truncating integer division.
+def is_prime_from(n, d) =
+  if d * d > n then 1
+  else if n - (n / d) * d == 0 then 0
+  else is_prime_from(n, d + 1);
+
+def is_prime(n) =
+  if n < 2 then 0
+  else is_prime_from(n, 2);
+
+def main() =
+  for n = 2, 50 in
+    if is_prime(n) then print_int(n) else 0;
