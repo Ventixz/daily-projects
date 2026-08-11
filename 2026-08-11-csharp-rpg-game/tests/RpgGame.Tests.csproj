@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>RpgGame.Tests</RootNamespace>
+    <AssemblyName>RpgGame.Tests</AssemblyName>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compiled directly against the game's source files: no project
+         reference, no NuGet test framework. Program.cs is excluded because
+         its top-level statements are an implicit Main that would collide
+         with this project's own TestRunner.Main. -->
+    <Compile Include="../src/**/*.cs" Exclude="../src/Program.cs;../src/bin/**/*.cs;../src/obj/**/*.cs" />
+    <Compile Include="*.cs" />
+  </ItemGroup>
+
+</Project>
