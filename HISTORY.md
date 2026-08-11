@@ -31,3 +31,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-08 | C++ | Understandable RayTracing in 256 lines | done |
 | 2026-08-09 | Java | Build a Simple HTTP Server with Java | done |
 | 2026-08-10 | OCaml | Implement a Language with LLVM | done |
+| 2026-08-11 | C# | Learn C# By Building a Simple RPG Game | done |
