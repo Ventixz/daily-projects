@@ -34,3 +34,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-11 | C# | Learn C# By Building a Simple RPG Game | done |
 | 2026-08-12 | Go | Building a TCP Chat in Go | done |
 | 2026-08-13 | Rust | Write a Microservice in Rust | done |
+| 2026-08-14 | F# | Write your own Excel in 100 lines of F# | done |

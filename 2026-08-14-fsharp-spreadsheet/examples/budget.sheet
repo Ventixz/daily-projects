@@ -1,0 +1,16 @@
+# A small quarterly budget. Column A holds labels, B holds Q1 numbers,
+# C computes things from them.
+A1=Item
+B1=Q1
+A2=Revenue
+B2=10000
+A3=Costs
+B3=6500
+A4=Profit
+B4==B2-B3
+A5=Margin %
+B5==B4/B2*100
+A7=Q1 total (labelled rows)
+B7==SUM(B2:B3)
+A8=Q1 average
+B8==AVERAGE(B2:B3)
