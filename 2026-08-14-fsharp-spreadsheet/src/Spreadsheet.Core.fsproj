@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Types.fs" />
+    <Compile Include="ColumnCodec.fs" />
+    <Compile Include="Lexer.fs" />
+    <Compile Include="Parser.fs" />
+    <Compile Include="Deps.fs" />
+    <Compile Include="Eval.fs" />
+    <Compile Include="Graph.fs" />
+    <Compile Include="Sheet.fs" />
+  </ItemGroup>
+
+</Project>
