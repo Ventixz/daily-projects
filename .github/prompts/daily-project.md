@@ -31,6 +31,7 @@ Create `<TODAY>-<short-project-slug>/` at the repo root.
 - **Milestones** — 3 to 5 ordered checkboxes. Each must be a runnable increment where something observable works. Not "write the parser" but "parse a single expression and print the AST".
 - **Stretch goals** — 2 optional extras.
 - **Hints** — the 1-2 places this project usually trips people up, and what to do about it. Omit this section entirely rather than inventing a failure mode you don't actually know.
+- **License** — exactly two lines. First: "Licensed under the MIT License; see the LICENSE file at the repository root." Second: credit the source tutorial by title and author, linking it. Do not create a per-project LICENSE file — the root one already covers this folder. Do not copy license text from the tutorial or its author's repo into this project.
 
 **Skeleton** at the project root: the idiomatic entry point and dependency manifest for that language (e.g. `main.go` + `go.mod`, `src/main.rs` + `Cargo.toml`, `main.py` + `requirements.txt`, `index.html` + `script.js`). Minimal and runnable — a hello-world that executes, not stubs full of TODOs. **Do not implement the project here.** The developer writes this part.
 
