@@ -36,3 +36,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-13 | Rust | Write a Microservice in Rust | done |
 | 2026-08-14 | F# | Write your own Excel in 100 lines of F# | done |
 | 2026-08-15 | Elixir | Building a Simple Chat App With Elixir and Phoenix | done |
+| 2026-08-16 | Clojure | Building a Spell-Checker | done |
