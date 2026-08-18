@@ -1,0 +1,9 @@
+{application, chatbus,
+ [{description, "A minimal multi-room TCP chat server built on OTP supervision trees"},
+  {vsn, "0.1.0"},
+  {registered, [chatbus_sup, chatbus_room_sup, chatbus_client_sup, chatbus_listener]},
+  {mod, {chatbus_app, []}},
+  {applications, [kernel, stdlib]},
+  {env, [{port, 5555}]},
+  {modules, []}
+ ]}.

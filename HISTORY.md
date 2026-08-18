@@ -38,3 +38,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-15 | Elixir | Building a Simple Chat App With Elixir and Phoenix | done |
 | 2026-08-16 | Clojure | Building a Spell-Checker | done |
 | 2026-08-17 | Scala | No Magic: Regular Expressions | done |
+| 2026-08-18 | Erlang | ChatBus: Multi-User Chat Room with OTP | done |
