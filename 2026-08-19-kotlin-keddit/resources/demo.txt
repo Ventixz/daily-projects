@@ -1,0 +1,24 @@
+# A worked example: an old, well-loved post vs. a brand new one, and a
+# comment thread where votes reorder both branches.
+post p1 alice 1000000 Kotlin coroutines explained
+post p2 bob 1700000000 What is the point of null safety
+
+comment c1 p1 - carol 1000100 I still don't get structured coroutine scopes
+comment c2 p1 - dave 1000200 This finally clicked for me, thanks
+comment c3 p1 c1 erin 1000300 Think of a scope as a lifetime, not a thread
+comment c4 p1 c1 frank 1000400 Same boat, following this thread
+
+list hot
+list best
+comments p1 top
+
+vote c1 up
+vote c1 up
+vote c1 up
+vote c3 up
+vote c3 up
+vote c3 up
+vote c3 up
+vote c3 up
+
+comments p1 top
