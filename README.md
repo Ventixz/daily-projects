@@ -34,8 +34,3 @@ ignore the scaffolding. The split is visible in the commit history.
 
 `HISTORY.md` is the log of every project served, and the routine reads it before
 picking so it never repeats a project or reuses a language from the last 7 days.
-
-## Ground rule for the reference folder
-
-Don't open `reference/` until I've made a real attempt. It exists to compare
-approaches afterward, not to copy from. If I read it first the day is wasted.
