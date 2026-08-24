@@ -1,0 +1,6 @@
+A snake is a legless reptile with a long body covered in scales.
+Snakes are carnivorous and swallow prey whole rather than chewing it.
+Some snake species are venomous, using specialized fangs to inject
+venom into prey or predators. Pythons are a family of large,
+non-venomous snakes found in Africa, Asia, and Australia that kill
+prey through constriction rather than venom.

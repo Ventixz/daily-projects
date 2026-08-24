@@ -1,0 +1,6 @@
+A search engine finds documents relevant to a user's query by consulting
+an inverted index built ahead of time from a document collection. Ranking
+algorithms like tf-idf and cosine similarity score how well each document
+matches the query so the most relevant results appear first. Modern web
+search engines also consider link structure, click behavior, and page
+freshness when ranking results, on top of pure text relevance.
