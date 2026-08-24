@@ -1,0 +1,7 @@
+Python is a high-level programming language known for readable syntax.
+Python supports multiple paradigms including procedural, object-oriented,
+and functional programming. The language emphasizes code readability
+with significant indentation. Python has a large standard library and
+a thriving ecosystem of third-party packages for web development, data
+science, and automation. Many programmers choose Python as a first
+language because the syntax reads almost like plain English.

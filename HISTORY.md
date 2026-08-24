@@ -44,3 +44,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-21 | Ruby | Build a Network Stack with Ruby | done |
 | 2026-08-22 | Go | Building a BitTorrent Client from the Ground Up | done |
 | 2026-08-23 | C | Build Your Own Lisp | done |
+| 2026-08-24 | Python | Implementing a Search Engine | done |

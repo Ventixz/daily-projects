@@ -1,0 +1,6 @@
+A programming language is a formal language used to write instructions
+that a computer can execute. Languages differ in syntax, typing
+discipline, and paradigm: some, like C, are compiled and statically
+typed, while others, like Python and JavaScript, are interpreted and
+dynamically typed. Choosing a language often depends on the problem
+domain, the surrounding ecosystem, and team familiarity.
