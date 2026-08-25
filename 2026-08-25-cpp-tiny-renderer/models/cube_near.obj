@@ -1,0 +1,24 @@
+# The "near" cube in the two-cube overlap demo: center (-0.15, -0.1, -0.4),
+# half-size 0.35. Smaller z is closer to the camera (see render.hpp), so
+# this cube sits in front of cube_far.obj, and their screen-space
+# footprints deliberately overlap.
+v -0.5 -0.45 -0.75
+v 0.2 -0.45 -0.75
+v 0.2 0.25 -0.75
+v -0.5 0.25 -0.75
+v -0.5 -0.45 -0.05
+v 0.2 -0.45 -0.05
+v 0.2 0.25 -0.05
+v -0.5 0.25 -0.05
+f 1 4 3
+f 1 3 2
+f 5 6 7
+f 5 7 8
+f 1 2 6
+f 1 6 5
+f 4 8 7
+f 4 7 3
+f 1 5 8
+f 1 8 4
+f 2 3 7
+f 2 7 6
