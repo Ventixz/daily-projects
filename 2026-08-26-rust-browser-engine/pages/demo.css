@@ -1,0 +1,58 @@
+html, body, div, p, h1 { display: block; }
+
+#page {
+  background: #eeeeee;
+  width: 780px;
+  margin: 10px;
+}
+
+.header {
+  background: #2b6cb0;
+  height: 60px;
+  border-width: 2px;
+  border-color: #1a365d;
+}
+
+.content {
+  background: #ffffff;
+  padding: 10px;
+}
+
+.sidebar {
+  width: 200px;
+  background: #cbd5e0;
+  padding: 8px;
+  margin: 4px;
+}
+
+.main {
+  width: 520px;
+  background: #f7fafc;
+  padding: 8px;
+  margin: 4px;
+}
+
+.card {
+  background: #fefcbf;
+  border-width: 3px;
+  border-color: #b7791f;
+  height: 60px;
+  margin: 6px;
+}
+
+.footer {
+  background: #4a5568;
+  height: 40px;
+}
+
+p {
+  height: 18px;
+  margin: 4px;
+  background: #ffffff;
+}
+
+h1 {
+  height: 30px;
+  margin: 8px;
+  background: #ffffff;
+}
