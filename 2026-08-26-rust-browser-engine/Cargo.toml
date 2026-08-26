@@ -1,0 +1,15 @@
+[package]
+name = "robinson"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "robinson"
+path = "src/main.rs"
+
+[lib]
+name = "robinson"
+path = "src/lib.rs"
+
+[profile.release]
+opt-level = 2
