@@ -47,3 +47,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-24 | Python | Implementing a Search Engine | done |
 | 2026-08-25 | C++ | Tiny Renderer (software rasterizer) | done |
 | 2026-08-26 | Rust | Let's Build a Browser Engine (Robinson) | done |
+| 2026-08-27 | OCaml | Writing a Game Boy Emulator (CPU core) | done |
