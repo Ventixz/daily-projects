@@ -1,0 +1,5 @@
+build/
+roms/fib.gb
+*.cmi
+*.cmx
+*.o
