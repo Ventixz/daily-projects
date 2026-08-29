@@ -49,3 +49,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-26 | Rust | Let's Build a Browser Engine (Robinson) | done |
 | 2026-08-27 | OCaml | Writing a Game Boy Emulator (CPU core) | done |
 | 2026-08-28 | Scala | Simple Actor-Based Blockchain | done |
+| 2026-08-29 | JavaScript | Build Your Own Virtual DOM | done |
