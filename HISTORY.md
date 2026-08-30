@@ -50,3 +50,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-27 | OCaml | Writing a Game Boy Emulator (CPU core) | done |
 | 2026-08-28 | Scala | Simple Actor-Based Blockchain | done |
 | 2026-08-29 | JavaScript | Build Your Own Virtual DOM | done |
+| 2026-08-30 | TypeScript | Build a Web Framework in Less Than 20 Lines of Code | done |

@@ -1,0 +1,16 @@
+{
+  "name": "tiny-web-framework",
+  "version": "1.0.0",
+  "description": "A from-scratch Express-style web framework (routing, middleware, next()) built on Node's raw http module.",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test dist/**/*.test.js",
+    "start": "npm run build && node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
