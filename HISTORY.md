@@ -54,3 +54,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-08-31 | Go | REST Servers in Go - Part 1: Standard Library | done |
 | 2026-09-01 | Python | A Python Implementation of a Python Bytecode Runner | done |
 | 2026-09-02 | C | Implementing a Key-Value Store (iKVS) | done |
+| 2026-09-03 | C++ | Write a C Compiler | done |
