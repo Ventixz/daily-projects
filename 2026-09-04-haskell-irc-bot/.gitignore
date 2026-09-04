@@ -1,0 +1,4 @@
+bin/
+build/
+*.hi
+*.o
