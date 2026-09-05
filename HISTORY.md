@@ -56,3 +56,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-02 | C | Implementing a Key-Value Store (iKVS) | done |
 | 2026-09-03 | C++ | Write a C Compiler | done |
 | 2026-09-04 | Haskell | Roll Your Own IRC Bot | done |
+| 2026-09-05 | Rust | Rust in Detail: Writing Scalable Chat Service from Scratch | done |

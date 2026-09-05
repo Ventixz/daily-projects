@@ -1,0 +1,15 @@
+[package]
+name = "wschat"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "wschat"
+path = "src/main.rs"
+
+[lib]
+name = "wschat"
+path = "src/lib.rs"
+
+[profile.release]
+opt-level = 2
