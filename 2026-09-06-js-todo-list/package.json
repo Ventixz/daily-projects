@@ -1,0 +1,12 @@
+{
+  "name": "js-todo-list",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vanilla-JS todo list: fractional-index drag reorder, command-based undo/redo, IndexedDB with a schema migration.",
+  "scripts": {
+    "test:unit": "node tests/unit/run.js",
+    "test:e2e": "node tests/e2e/run.js",
+    "serve": "node server.js"
+  }
+}
