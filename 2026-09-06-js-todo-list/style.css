@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light dark;
+  --border: #888;
+  --done: #888;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 32rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.app h1 {
+  margin-bottom: 1rem;
+}
+
+#add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#add-input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters button.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  cursor: grab;
+}
+
+.todo-item:focus {
+  outline: 2px solid dodgerblue;
+  outline-offset: -2px;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: var(--done);
+}
+
+.todo-text {
+  flex: 1;
+}
+
+.todo-edit {
+  flex: 1;
+  font: inherit;
+}
+
+.todo-remove {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
