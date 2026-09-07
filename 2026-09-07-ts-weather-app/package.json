@@ -1,0 +1,17 @@
+{
+  "name": "ts-weather-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript weather app: request de-dup, exponential backoff with full jitter, in-flight race resolution, and stale-while-offline cache -- built on Open-Meteo (no API key needed).",
+  "scripts": {
+    "build": "tsc",
+    "test:unit": "npm run build && node dist/tests/unit/run.js",
+    "test:e2e": "npm run build && node dist/tests/e2e/run.js",
+    "serve": "npm run build && node server.js"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.0",
+    "@types/node": "^22.0.0"
+  }
+}
