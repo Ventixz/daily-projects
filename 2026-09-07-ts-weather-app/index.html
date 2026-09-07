@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Weather</h1>
+      <form id="search-form">
+        <input id="city-input" type="text" placeholder="Search a city…" autocomplete="off" />
+        <button type="submit">Search</button>
+        <button type="button" id="unit-toggle">Show °F</button>
+      </form>
+      <p id="status" role="status"></p>
+      <section id="result"></section>
+    </main>
+    <script type="module" src="dist/app.js"></script>
+  </body>
+</html>
