@@ -60,3 +60,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-06 | JavaScript | Build a Todo List App in JavaScript | done |
 | 2026-09-07 | TypeScript | Build a Simple Weather App With Vanilla JavaScript | done |
 | 2026-09-08 | Go | Building Blockchain in Go | done |
+| 2026-09-09 | Python | Writing a basic x86-64 JIT compiler from scratch in stock Python | done |
