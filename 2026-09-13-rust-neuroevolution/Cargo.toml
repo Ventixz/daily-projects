@@ -1,0 +1,18 @@
+[package]
+name = "evolution_sim"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "evolution-sim"
+path = "src/main.rs"
+
+[lib]
+name = "evolution_sim"
+path = "src/lib.rs"
+
+[dependencies]
+rand = "0.8"
+
+[profile.release]
+opt-level = 2

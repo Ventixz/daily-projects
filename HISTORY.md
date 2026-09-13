@@ -64,3 +64,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-10 | PHP | Build Your Own grep | done |
 | 2026-09-11 | C | Write a Shell in C | done |
 | 2026-09-12 | C# | Create a Rogue-like game in C# | done |
+| 2026-09-13 | Rust | Learning to Fly: Evolution Simulation with Neural Networks and Genetic Algorithm | done |
