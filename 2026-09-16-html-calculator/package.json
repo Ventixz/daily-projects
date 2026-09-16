@@ -1,0 +1,12 @@
+{
+  "name": "html-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vanilla HTML/CSS/JS calculator: shunting-yard precedence parsing, contextual percent, memory, undo-free history, keyboard input.",
+  "scripts": {
+    "test:unit": "node tests/unit/run.js",
+    "test:e2e": "node tests/e2e/run.js",
+    "serve": "node server.js"
+  }
+}
