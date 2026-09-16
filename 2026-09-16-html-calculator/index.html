@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <div class="screen-area">
+        <div class="memory-indicator" data-testid="memory-indicator">M</div>
+        <div class="screen" data-testid="screen">0</div>
+      </div>
+
+      <div class="keypad">
+        <button class="key key-fn" data-action="clear" data-testid="key-AC">AC</button>
+        <button class="key key-fn" data-action="clear-entry" data-testid="key-CE">CE</button>
+        <button class="key key-fn" data-action="backspace" data-testid="key-back">&larr;</button>
+        <button class="key key-op" data-action="operator" data-value="/" data-testid="key-divide">&divide;</button>
+
+        <button class="key key-mem" data-action="memory" data-value="MC" data-testid="key-MC">MC</button>
+        <button class="key key-mem" data-action="memory" data-value="MR" data-testid="key-MR">MR</button>
+        <button class="key key-mem" data-action="memory" data-value="M-" data-testid="key-Mminus">M&minus;</button>
+        <button class="key key-mem" data-action="memory" data-value="M+" data-testid="key-Mplus">M+</button>
+
+        <button class="key key-digit" data-action="digit" data-value="7" data-testid="key-7">7</button>
+        <button class="key key-digit" data-action="digit" data-value="8" data-testid="key-8">8</button>
+        <button class="key key-digit" data-action="digit" data-value="9" data-testid="key-9">9</button>
+        <button class="key key-op" data-action="operator" data-value="*" data-testid="key-multiply">&times;</button>
+
+        <button class="key key-digit" data-action="digit" data-value="4" data-testid="key-4">4</button>
+        <button class="key key-digit" data-action="digit" data-value="5" data-testid="key-5">5</button>
+        <button class="key key-digit" data-action="digit" data-value="6" data-testid="key-6">6</button>
+        <button class="key key-op" data-action="operator" data-value="-" data-testid="key-minus">&minus;</button>
+
+        <button class="key key-digit" data-action="digit" data-value="1" data-testid="key-1">1</button>
+        <button class="key key-digit" data-action="digit" data-value="2" data-testid="key-2">2</button>
+        <button class="key key-digit" data-action="digit" data-value="3" data-testid="key-3">3</button>
+        <button class="key key-op" data-action="operator" data-value="+" data-testid="key-plus">+</button>
+
+        <button class="key key-fn" data-action="toggle-sign" data-testid="key-sign">&plusmn;</button>
+        <button class="key key-digit" data-action="digit" data-value="0" data-testid="key-0">0</button>
+        <button class="key key-fn" data-action="decimal" data-testid="key-dot">.</button>
+        <button class="key key-fn" data-action="percent" data-testid="key-percent">%</button>
+
+        <button class="key key-equals" data-action="equals" data-testid="key-equals">=</button>
+      </div>
+
+      <section class="history" aria-label="Calculation history">
+        <h2>History</h2>
+        <ul class="history-list" data-testid="history-list"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
