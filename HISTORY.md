@@ -67,3 +67,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-13 | Rust | Learning to Fly: Evolution Simulation with Neural Networks and Genetic Algorithm | done |
 | 2026-09-14 | C++ | High-Performance Matrix Multiplication | done |
 | 2026-09-15 | Java | Securing a Web Application (Spring Boot, JWT auth) | done |
+| 2026-09-16 | HTML/CSS | Build an HTML Calculator with JS | done |
