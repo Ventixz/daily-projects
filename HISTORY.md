@@ -71,3 +71,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-17 | Go | How to Use Godog for Behavior-driven Development in Go | done |
 | 2026-09-18 | PHP | Build a Laravel CRUD Application From Scratch | done |
 | 2026-09-19 | R | Build Web Apps with Shiny | done |
+| 2026-09-20 | Clojure | Tetris in ClojureScript | done |
