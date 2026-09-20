@@ -1,0 +1,12 @@
+{
+  "name": "clojure-tetris-e2e",
+  "private": true,
+  "description": "Playwright smoke test for the compiled ClojureScript Tetris UI",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "playwright": "^1.56.1"
+  },
+  "scripts": {
+    "e2e": "node e2e/smoke.mjs"
+  }
+}
