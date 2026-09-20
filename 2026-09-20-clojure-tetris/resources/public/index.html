@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tetris (ClojureScript)</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Tetris</h1>
+  <div class="layout">
+    <canvas id="board" width="240" height="480"></canvas>
+    <div class="side">
+      <div class="panel">
+        <h2>Next</h2>
+        <canvas id="next" width="96" height="96"></canvas>
+      </div>
+      <div class="panel">
+        <p>Score: <span id="score">0</span></p>
+        <p>Lines: <span id="lines">0</span></p>
+        <p>Level: <span id="level">1</span></p>
+        <p id="status"></p>
+      </div>
+      <div class="panel">
+        <h2>Controls</h2>
+        <ul>
+          <li>&larr; / &rarr; -- move</li>
+          <li>&uarr; -- rotate</li>
+          <li>&darr; -- soft drop</li>
+          <li>Space -- hard drop</li>
+          <li>P -- pause</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
