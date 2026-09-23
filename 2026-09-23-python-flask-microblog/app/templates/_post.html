@@ -1,0 +1,5 @@
+<article class="post">
+  <a href="{{ url_for('main.user', username=post.author.username) }}">{{ post.author.username }}</a>
+  <p>{{ post.body }}</p>
+  <time>{{ post.timestamp }}</time>
+</article>

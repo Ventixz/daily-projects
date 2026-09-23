@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ user.username }}</h1>
+  {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+  <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following</p>
+  {% if user == current_user %}
+    <p><a href="{{ url_for('main.edit_profile') }}">Edit your profile</a></p>
+  {% elif current_user.is_following(user) %}
+    <form action="{{ url_for('main.unfollow', username=user.username) }}" method="post">
+      <button type="submit">Unfollow</button>
+    </form>
+  {% else %}
+    <form action="{{ url_for('main.follow', username=user.username) }}" method="post">
+      <button type="submit">Follow</button>
+    </form>
+  {% endif %}
+  {% for post in posts %}
+    {% include "_post.html" %}
+  {% endfor %}
+  {% if pagination and pagination.has_prev %}
+    <a href="{{ url_for('main.user', username=user.username, page=pagination.prev_num) }}">Newer posts</a>
+  {% endif %}
+  {% if pagination and pagination.has_next %}
+    <a href="{{ url_for('main.user', username=user.username, page=pagination.next_num) }}">Older posts</a>
+  {% endif %}
+{% endblock %}

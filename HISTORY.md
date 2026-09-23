@@ -74,3 +74,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-20 | Clojure | Tetris in ClojureScript | done |
 | 2026-09-21 | Rust | Single Page Applications using Rust | done |
 | 2026-09-22 | C++ | Build a Live Code-reloader Library for C++ | done |
+| 2026-09-23 | Python | Build a Microblog with Flask | done |
