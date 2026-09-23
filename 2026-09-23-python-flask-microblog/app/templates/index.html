@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>{{ title }}</h1>
+  {% if form %}
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.post.label }}<br>
+        {{ form.post(rows=3, cols=50) }}<br>
+        {% for error in form.post.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      {{ form.submit() }}
+    </form>
+  {% endif %}
+  {% for post in posts %}
+    {% include "_post.html" %}
+  {% endfor %}
+  {% if pagination and pagination.has_prev %}
+    <a href="{{ url_for(request.endpoint, page=pagination.prev_num) }}">Newer posts</a>
+  {% endif %}
+  {% if pagination and pagination.has_next %}
+    <a href="{{ url_for(request.endpoint, page=pagination.next_num) }}">Older posts</a>
+  {% endif %}
+{% endblock %}
