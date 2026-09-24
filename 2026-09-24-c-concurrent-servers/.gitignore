@@ -1,0 +1,6 @@
+sequential
+threaded
+epoll
+run_unit_tests
+*.o
+*.dSYM
