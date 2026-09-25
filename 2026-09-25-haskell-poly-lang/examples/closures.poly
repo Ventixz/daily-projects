@@ -1,0 +1,6 @@
+-- Currying and closures: `add 5` returns a function that has closed over
+-- x = 5, and the type checker infers the curried signature
+-- Int -> Int -> Int without being told.
+let add = \x -> \y -> x + y in
+let add5 = add 5 in
+add5 3
