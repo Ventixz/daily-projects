@@ -1,0 +1,7 @@
+-- The flagship Hindley-Milner feature: `id` is generalized at the `let`,
+-- so this one definition gets instantiated at Bool and then at Int in the
+-- same program. Try changing `let` to a `\x -> ...` lambda binding instead
+-- of `let id = ...` and this stops type-checking: a lambda-bound `id`
+-- gets one monomorphic type variable, not a fresh instantiation per use.
+let id = \x -> x in
+if id true then id 1 else id 0
