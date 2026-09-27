@@ -1,0 +1,14 @@
+<h1><%= logged_in? ? "Your feed" : "Recent posts" %></h1>
+
+<% if logged_in? %>
+  <%= render "shared/errors", object: @post %>
+  <%= form_with model: @post do |f| %>
+    <%= f.label :content, "What's happening?" %>
+    <%= f.text_area :content, rows: 3 %>
+    <%= f.submit "Post" %>
+  <% end %>
+<% else %>
+  <p><%= link_to "Sign in", new_session_path %> or <%= link_to "sign up", new_user_path %> to post and follow people.</p>
+<% end %>
+
+<%= render partial: "posts/post", collection: @posts, as: :post %>

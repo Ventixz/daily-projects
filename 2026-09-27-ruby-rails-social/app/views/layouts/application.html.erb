@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Social Network" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <%= link_to "Feed", root_path %>
+        <% if logged_in? %>
+          <%= link_to "My profile", user_path(current_user) %>
+        <% end %>
+      </div>
+      <div>
+        <% if logged_in? %>
+          Signed in as <%= current_user.username %>
+          <%= button_to "Sign out", session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in", new_session_path %>
+          <%= link_to "Sign up", new_user_path %>
+        <% end %>
+      </div>
+    </nav>
+
+    <% flash.each do |type, message| %>
+      <div class="flash <%= type %>"><%= message %></div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
