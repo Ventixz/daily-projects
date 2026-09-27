@@ -1,0 +1,3 @@
+bob_follows_alice:
+  follower: bob
+  followed: alice
