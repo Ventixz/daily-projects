@@ -1,0 +1,13 @@
+<h1>Sign in</h1>
+
+<%= form_with url: session_path, method: :post do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Sign in" %>
+<% end %>
+
+<p><%= link_to "Need an account? Sign up", new_user_path %></p>

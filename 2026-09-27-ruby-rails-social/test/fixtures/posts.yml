@@ -1,0 +1,9 @@
+alice_post:
+  user: alice
+  content: "Alice's first post"
+  likes_count: 0
+
+bob_post:
+  user: bob
+  content: "Bob's first post"
+  likes_count: 0

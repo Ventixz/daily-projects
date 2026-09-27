@@ -1,0 +1,18 @@
+<h1><%= @user.username %></h1>
+
+<p>
+  <%= pluralize(@user.followers.count, "follower") %> ·
+  following <%= @user.following.count %>
+</p>
+
+<% if logged_in? && current_user != @user %>
+  <% if current_user.following?(@user) %>
+    <% relationship = current_user.active_relationships.find_by(followed: @user) %>
+    <%= button_to "Unfollow", relationship_path(relationship), method: :delete %>
+  <% else %>
+    <%= button_to "Follow", relationships_path(followed_id: @user.id), method: :post %>
+  <% end %>
+<% end %>
+
+<h2>Posts</h2>
+<%= render partial: "posts/post", collection: @posts, as: :post %>
