@@ -1,0 +1,21 @@
+<div class="post" id="<%= dom_id(post) %>">
+  <div class="meta">
+    <%= link_to post.user.username, user_path(post.user) %>
+    &middot; <%= time_ago_in_words(post.created_at) %> ago
+  </div>
+  <div class="content"><%= post.content %></div>
+  <div class="actions">
+    <% if logged_in? %>
+      <% if post.liked_by?(current_user) %>
+        <%= button_to "Unlike (#{post.likes_count})", post_like_path(post), method: :delete %>
+      <% else %>
+        <%= button_to "Like (#{post.likes_count})", post_like_path(post), method: :post %>
+      <% end %>
+      <% if post.user == current_user %>
+        <%= button_to "Delete", post_path(post), method: :delete %>
+      <% end %>
+    <% else %>
+      <%= post.likes_count %> like<%= "s" unless post.likes_count == 1 %>
+    <% end %>
+  </div>
+</div>
