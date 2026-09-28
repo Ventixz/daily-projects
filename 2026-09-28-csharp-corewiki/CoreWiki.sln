@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki", "src\CoreWiki.csproj", "{30C89AA6-F01C-4177-938C-3B1D227D81A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreWiki.Tests", "tests\CoreWiki.Tests.csproj", "{94207349-9A9A-4330-A74D-384354A6E569}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30C89AA6-F01C-4177-938C-3B1D227D81A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C89AA6-F01C-4177-938C-3B1D227D81A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C89AA6-F01C-4177-938C-3B1D227D81A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C89AA6-F01C-4177-938C-3B1D227D81A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94207349-9A9A-4330-A74D-384354A6E569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94207349-9A9A-4330-A74D-384354A6E569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94207349-9A9A-4330-A74D-384354A6E569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94207349-9A9A-4330-A74D-384354A6E569}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

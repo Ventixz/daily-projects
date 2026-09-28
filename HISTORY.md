@@ -79,3 +79,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-09-25 | Haskell | Write You a Haskell (lexer/parser/Algorithm W/evaluator) | done |
 | 2026-09-26 | Go | Building Go Web Applications and Microservices Using Gin | done |
 | 2026-09-27 | Ruby | How To Build a Ruby on Rails Application | done |
+| 2026-09-28 | C# | Building the CoreWiki | done |
