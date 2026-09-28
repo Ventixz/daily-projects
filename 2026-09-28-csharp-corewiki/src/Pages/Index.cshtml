@@ -1,0 +1,26 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "All pages";
+}
+
+<h1>All pages</h1>
+
+@if (Model.Pages.Count == 0)
+{
+    <p>No pages yet.</p>
+}
+else
+{
+    <ul class="page-list">
+        @foreach (var wikiPage in Model.Pages)
+        {
+            <li>
+                <a asp-page="/Wiki/View" asp-route-slug="@wikiPage.Slug">@wikiPage.Title</a>
+                <span class="muted">updated @wikiPage.UpdatedUtc.ToString("yyyy-MM-dd HH:mm") UTC</span>
+            </li>
+        }
+    </ul>
+}
+
+<p><a class="button" asp-page="/Wiki/New">+ New page</a></p>

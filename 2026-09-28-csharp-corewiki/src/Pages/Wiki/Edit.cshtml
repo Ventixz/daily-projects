@@ -1,0 +1,29 @@
+@page "/wiki/{slug}/edit"
+@model CoreWiki.Pages.Wiki.EditModel
+@{
+    ViewData["Title"] = $"Editing {Model.Title}";
+}
+
+<h1>Editing @Model.Title</h1>
+
+@if (Model.ConflictMessage is not null)
+{
+    <p class="errors">@Model.ConflictMessage</p>
+}
+
+<form method="post">
+    <div asp-validation-summary="All" class="errors"></div>
+    <input type="hidden" asp-for="Version" />
+
+    <label for="Title">Title</label>
+    <input asp-for="Title" />
+
+    <label for="Body">Content (Markdown)</label>
+    <textarea asp-for="Body" rows="16"></textarea>
+
+    <label for="EditSummary">Edit summary (optional)</label>
+    <input asp-for="EditSummary" placeholder="What changed and why" />
+
+    <button type="submit">Save</button>
+    <a asp-page="/Wiki/View" asp-route-slug="@Model.Slug">Cancel</a>
+</form>
