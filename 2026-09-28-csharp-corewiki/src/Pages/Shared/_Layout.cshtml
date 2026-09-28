@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CoreWiki</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="topnav">
+            <a class="brand" asp-page="/Index">CoreWiki</a>
+            <a asp-page="/Wiki/View" asp-route-slug="home">Home</a>
+            <a asp-page="/Index">All pages</a>
+            <form method="get" asp-page="/Search" class="nav-search">
+                <input type="text" name="q" placeholder="Search&hellip;" />
+            </form>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        CoreWiki &mdash; a small ASP.NET Core Razor Pages wiki with Markdown pages, edit history, and optimistic concurrency.
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,16 @@
+@page "/wiki/{slug}/history/{id:int}"
+@model CoreWiki.Pages.Wiki.RevisionModel
+@{
+    ViewData["Title"] = $"{Model.Revision?.Title} (revision)";
+}
+
+<h1>@Model.Revision?.Title</h1>
+<p class="muted">
+    As of @Model.Revision?.EditedUtc.ToString("yyyy-MM-dd HH:mm") UTC &middot;
+    this is a past revision, not the current page &middot;
+    <a asp-page="/Wiki/History" asp-route-slug="@Model.Slug">Back to history</a> &middot;
+    <a asp-page="/Wiki/View" asp-route-slug="@Model.Slug">Current version</a>
+</p>
+<div class="wiki-content">
+    @Html.Raw(Model.RenderedHtml)
+</div>

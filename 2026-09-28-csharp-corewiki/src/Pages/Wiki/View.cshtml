@@ -1,0 +1,24 @@
+@page "/wiki/{slug}"
+@model CoreWiki.Pages.Wiki.ViewModel
+@{
+    ViewData["Title"] = Model.WikiPage?.Title ?? Model.Slug;
+}
+
+@if (Model.WikiPage is null)
+{
+    <h1>@Model.Slug</h1>
+    <p>This page doesn't exist yet.</p>
+    <p><a class="button" asp-page="/Wiki/New" asp-route-title="@Model.Slug">Create it</a></p>
+}
+else
+{
+    <h1>@Model.WikiPage.Title</h1>
+    <p class="muted">
+        Last edited @Model.WikiPage.UpdatedUtc.ToString("yyyy-MM-dd HH:mm") UTC &middot;
+        <a asp-page="/Wiki/Edit" asp-route-slug="@Model.WikiPage.Slug">Edit</a> &middot;
+        <a asp-page="/Wiki/History" asp-route-slug="@Model.WikiPage.Slug">History</a>
+    </p>
+    <div class="wiki-content">
+        @Html.Raw(Model.RenderedHtml)
+    </div>
+}
