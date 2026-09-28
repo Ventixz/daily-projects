@@ -1,0 +1,23 @@
+@page "/wiki/{slug}/history"
+@model CoreWiki.Pages.Wiki.HistoryModel
+@{
+    ViewData["Title"] = $"History: {Model.WikiPage?.Title}";
+}
+
+<h1>History: @Model.WikiPage?.Title</h1>
+<p><a asp-page="/Wiki/View" asp-route-slug="@Model.Slug">Back to page</a></p>
+
+<ul class="page-list">
+    @foreach (var revision in Model.Revisions)
+    {
+        <li>
+            <a asp-page="/Wiki/Revision" asp-route-slug="@Model.Slug" asp-route-id="@revision.Id">
+                @revision.EditedUtc.ToString("yyyy-MM-dd HH:mm") UTC
+            </a>
+            @if (!string.IsNullOrWhiteSpace(revision.EditSummary))
+            {
+                <span class="muted">&mdash; @revision.EditSummary</span>
+            }
+        </li>
+    }
+</ul>

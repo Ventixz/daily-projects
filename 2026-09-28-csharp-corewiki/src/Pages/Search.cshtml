@@ -1,0 +1,22 @@
+@page "/search"
+@model SearchModel
+@{
+    ViewData["Title"] = $"Search: {Model.Q}";
+}
+
+<h1>Search</h1>
+<form method="get" class="search-form">
+    <input type="text" name="q" value="@Model.Q" placeholder="Search title or content" />
+    <button type="submit">Search</button>
+</form>
+
+@if (!string.IsNullOrWhiteSpace(Model.Q))
+{
+    <p>@Model.Results.Count result(s) for "@Model.Q"</p>
+    <ul class="page-list">
+        @foreach (var wikiPage in Model.Results)
+        {
+            <li><a asp-page="/Wiki/View" asp-route-slug="@wikiPage.Slug">@wikiPage.Title</a></li>
+        }
+    </ul>
+}
