@@ -1,0 +1,11 @@
+{
+  "name": "js-flappy-bird",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Flappy Bird in vanilla JS: a pure, seeded, fixed-timestep game core plus a thin canvas renderer.",
+  "scripts": {
+    "test": "node tests/run.js",
+    "serve": "node server.js"
+  }
+}
