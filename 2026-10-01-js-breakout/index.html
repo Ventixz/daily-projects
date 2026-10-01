@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8"><title>Breakout</title>
+<canvas id="c" width="480" height="320" style="background:#eee"></canvas>
+<p>Arrow keys to move.</p>
+<script>
+// engine.js uses CommonJS; shim for the browser, then inline-load it.
+var module = { exports: {} };
+</script>
+<script src="src/engine.js"></script>
+<script>
+const { createGame, step } = module.exports;
+const g = createGame(), ctx = document.getElementById('c').getContext('2d');
+addEventListener('keydown', e => { if (e.key === 'ArrowLeft') g.input = -1; if (e.key === 'ArrowRight') g.input = 1; });
+addEventListener('keyup', e => { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') g.input = 0; });
+(function loop() {
+  step(g); const o = g.o;
+  ctx.clearRect(0, 0, o.width, o.height);
+  g.bricks.forEach(b => b.alive && ctx.fillRect(b.x, b.y, o.brickW, o.brickH));
+  ctx.fillRect(g.paddleX, o.height - o.paddleH, o.paddleW, o.paddleH);
+  ctx.beginPath(); ctx.arc(g.ball.x, g.ball.y, o.ballR, 0, 7); ctx.fill();
+  ctx.fillText(`Score ${g.score}  Lives ${g.lives}  ${g.status}`, 8, 14);
+  requestAnimationFrame(loop);
+})();
+</script>
