@@ -57,7 +57,7 @@ AddressSanitizer + UBSan with no reports.
 
 - Tree depth is capped at 2: the root is an internal node whose children are all
   leaves, so an internal node never splits. Capacity is roughly 400 pages
-  (~2.5k-5k rows); beyond that, inserts print `Error: Table full.`
+  (~4.8k rows in my 6000-random-insert run); beyond that, inserts print `Error: Table full.`
 - No delete, no update, no secondary indexes, no free-page list.
 - Single process, no locking, no crash safety (a crash mid-flush can corrupt the file).
 - The database is flushed on `.exit` or EOF, not on every write.
