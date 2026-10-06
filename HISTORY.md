@@ -84,3 +84,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-02 | Rust | Writing a Rust Roguelike | done |
 | 2026-10-03 | Python | Let's Build A Simple Interpreter (Pascal subset) | done |
 | 2026-10-05 | C | Let's Build a Simple Database | done |
+| 2026-10-06 | Python | Write yourself a Git | done |
