@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JavaScript30 Trio</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 16px;background:#111;color:#eee}
+.pads{display:flex;flex-wrap:wrap;gap:8px}.pad{border:2px solid #555;padding:1rem;width:70px;text-align:center;transition:transform .07s}
+.pad.playing{transform:scale(1.15);border-color:#ffc600}
+.clock{width:200px;height:200px;border:8px solid #eee;border-radius:50%;position:relative;margin:1rem auto}
+.hand{position:absolute;top:50%;left:50%;width:45%;height:4px;background:#ffc600;transform-origin:0 50%;transform:rotate(90deg)}
+input{width:100%;padding:.6rem;font-size:1.1rem}.hl{background:#ffc600;color:#000}li{list-style:none;padding:.3rem 0}
+</style></head><body>
+<h1>JavaScript30 Trio</h1>
+<h2>Drum kit (press A S D F G H J K L)</h2><div class="pads" id="pads"></div>
+<h2>Clock</h2><div class="clock"><div class="hand" id="h"></div><div class="hand" id="m"></div><div class="hand" id="s" style="background:#f33;height:2px"></div></div>
+<h2>Type ahead</h2><input id="q" placeholder="Filter cities or states"><ul id="out"></ul>
+<script src="lib.js"></script>
+<script>
+(() => {
+const { padForKey, clockAngles, filterItems, highlight, withCommas, PADS } = window.Lib;
+// Drum kit: synthesize a blip per pad with WebAudio so no sample files are needed.
+const pads = document.getElementById('pads');
+Object.entries(PADS).forEach(([code, name]) => {
+  const d = document.createElement('div'); d.className = 'pad'; d.id = 'pad' + code;
+  d.textContent = String.fromCharCode(code) + ' ' + name; pads.appendChild(d);
+});
+let ctx;
+function play(code) {
+  const freq = 120 + (Object.keys(PADS).indexOf(String(code))) * 60;
+  ctx = ctx || new AudioContext();
+  const o = ctx.createOscillator(), g = ctx.createGain();
+  o.frequency.value = freq; o.connect(g); g.connect(ctx.destination);
+  g.gain.setValueAtTime(.3, ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001, ctx.currentTime + .3);
+  o.start(); o.stop(ctx.currentTime + .3);
+}
+window.addEventListener('keydown', (e) => {
+  if (e.target.id === 'q' || !padForKey(e.keyCode)) return;
+  const el = document.getElementById('pad' + e.keyCode);
+  el.classList.add('playing'); play(e.keyCode);
+});
+pads.addEventListener('transitionend', () => {});
+window.addEventListener('keyup', (e) => { const el = document.getElementById('pad' + e.keyCode); if (el) el.classList.remove('playing'); });
+// Clock
+function tick() {
+  const a = clockAngles(new Date());
+  h.style.transform = `rotate(${a.hour}deg)`; m.style.transform = `rotate(${a.minute}deg)`; s.style.transform = `rotate(${a.second}deg)`;
+}
+setInterval(tick, 1000); tick();
+// Type ahead
+const places = ['Boston, Massachusetts', 'Austin, Texas', 'Houston, Texas', 'Denver, Colorado', 'Portland, Oregon', 'Portland, Maine', 'Boise, Idaho'];
+q.addEventListener('input', () => {
+  out.innerHTML = filterItems(places, q.value).map((p) => `<li>${highlight(p, q.value)}</li>`).join('');
+});
+})();
+</script></body></html>
