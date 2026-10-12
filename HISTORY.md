@@ -90,3 +90,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-09 | C++ | Tetris Tutorial in C++ (terminal, tested logic) | done |
 | 2026-10-10 | Python | Write Linear Regression From Scratch in Python | done |
 | 2026-10-11 | JavaScript | Build 30 things in 30 days (JavaScript30: drum kit, clock, type ahead) | done |
+| 2026-10-12 | Rust | Writing NES Emulator in Rust (6502 CPU core, tested) | done |
