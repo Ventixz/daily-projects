@@ -92,3 +92,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-11 | JavaScript | Build 30 things in 30 days (JavaScript30: drum kit, clock, type ahead) | done |
 | 2026-10-12 | Rust | Writing NES Emulator in Rust (6502 CPU core, tested) | done |
 | 2026-10-14 | Python | ASCII Art (stdlib PGM/PPM converter, tested) | done |
+| 2026-10-15 | Ruby | Neural network in 11 lines (pure Ruby, backprop, tested) | done |
