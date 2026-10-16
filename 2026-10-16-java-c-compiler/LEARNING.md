@@ -29,8 +29,8 @@ Build and test: `cd src && javac -d ../out Compiler.java TestRunner.java && java
   `0 && (a=5)` and `1 || (a=5)` prove the right side is skipped.
 - **Division needs sign extension.** `idivl` divides `%edx:%eax`, so `cltd` must run first, and the
   remainder lands in `%edx`. `-7/2` truncating toward zero matches C.
-- **Comparisons:** `cmpl` + `setX %al` after zeroing `%eax` (zero first, since `cmp` clobbers flags that
-  `xor`/`mov $0` would not... `movl` doesn't touch flags, which is why it's used rather than `xorl`).
+- **Comparisons:** `cmpl` sets flags, then `setX %al` writes one byte. Zero `%eax` with `movl $0` first
+  (not `xorl`, which would clobber the flags `cmpl` just set) so the upper bytes are clean.
 - **Locals live at fixed offsets from `%rbp`.** Pushing each declaration's value keeps `%rsp` in sync
   with the offset table, so no separate frame-size pass is needed. A flat map is enough until blocks
   introduce nested scopes.
