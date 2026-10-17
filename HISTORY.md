@@ -94,3 +94,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-14 | Python | ASCII Art (stdlib PGM/PPM converter, tested) | done |
 | 2026-10-15 | Ruby | Neural network in 11 lines (pure Ruby, backprop, tested) | done |
 | 2026-10-16 | Java | Write a C Compiler (ints, operators, locals → x86-64, tested) | done |
+| 2026-10-17 | C++ | KABOOM! in 180 lines of bare C++ (noise-displaced SDF explosion, tested) | done |
