@@ -97,3 +97,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-17 | C++ | KABOOM! in 180 lines of bare C++ (noise-displaced SDF explosion, tested) | done |
 | 2026-10-19 | Go | Building a container from scratch in Go (namespaces, chroot, cgroups, tested) | done |
 | 2026-10-21 | C | MQTT Broker from scratch (MQTT 3.1.1: wildcards, QoS 0/1 acks, keepalive, tested) | done |
+| 2026-10-22 | Python | Create photomosaic art (stdlib PPM, average-colour matching, reuse cap, tested) | done |
