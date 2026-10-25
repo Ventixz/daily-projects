@@ -99,3 +99,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-21 | C | MQTT Broker from scratch (MQTT 3.1.1: wildcards, QoS 0/1 acks, keepalive, tested) | done |
 | 2026-10-22 | Python | Create photomosaic art (stdlib PPM, average-colour matching, reuse cap, tested) | done |
 | 2026-10-23 | Python | Build Your Own Neural Net from Scratch (sigmoid MLP, backprop, XOR, gradient-checked) | done |
+| 2026-10-25 | JavaScript | Full Stack Movie Voting App core (immutable state, Redux-style reducer, tested) | done |
