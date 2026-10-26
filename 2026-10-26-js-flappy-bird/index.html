@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset="utf-8"><title>Flappy Bird</title>
+<canvas id="c" width="288" height="400" style="background:#70c5ce"></canvas>
+<p>Space / click / tap to flap. Any flap restarts after game over.</p>
+<script>var module = { exports: {} };</script>
+<script src="src/engine.js"></script>
+<script>
+const { createGame, flap, step } = module.exports;
+const ctx = document.getElementById('c').getContext('2d');
+let g = createGame({}, Date.now());
+function act() { if (g.status === 'over') g = createGame({}, Date.now()); else flap(g); }
+addEventListener('keydown', e => { if (e.code === 'Space') { e.preventDefault(); act(); } });
+addEventListener('pointerdown', act);
+(function loop() {
+  step(g); const o = g.o;
+  ctx.clearRect(0, 0, o.width, o.height);
+  ctx.fillStyle = '#3a9d23';
+  g.pipes.forEach(p => { ctx.fillRect(p.x, 0, o.pipeW, p.gapTop); ctx.fillRect(p.x, p.gapTop + o.gap, o.pipeW, o.height); });
+  ctx.fillStyle = '#f7d51d';
+  ctx.beginPath(); ctx.arc(o.birdX, g.bird.y, o.birdR, 0, 7); ctx.fill();
+  ctx.fillStyle = '#000'; ctx.font = '16px sans-serif';
+  ctx.fillText(g.status === 'ready' ? 'Press space' : g.status === 'over' ? `Game over - score ${g.score}` : `Score ${g.score}`, 8, 20);
+  requestAnimationFrame(loop);
+})();
+</script>
