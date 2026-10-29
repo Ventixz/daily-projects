@@ -100,3 +100,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-22 | Python | Create photomosaic art (stdlib PPM, average-colour matching, reuse cap, tested) | done |
 | 2026-10-23 | Python | Build Your Own Neural Net from Scratch (sigmoid MLP, backprop, XOR, gradient-checked) | done |
 | 2026-10-26 | JavaScript | Make Flappy Bird in HTML5 and JavaScript (canvas, seeded pipes, circle-rect collision, tested) | done |
+| 2026-10-29 | Rust | A Simple Web App in Rust (std-only HTTP server, notes board, tested; tutorial unreachable) | done |
