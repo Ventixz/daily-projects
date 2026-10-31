@@ -102,3 +102,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-26 | JavaScript | Make Flappy Bird in HTML5 and JavaScript (canvas, seeded pipes, circle-rect collision, tested) | done |
 | 2026-10-29 | Rust | A Simple Web App in Rust (std-only HTTP server, notes board, tested; tutorial unreachable) | done |
 | 2026-10-30 | Go | Go WebAssembly Calculator (recursive-descent evaluator, CLI, wasm entry point, tested) | done |
+| 2026-10-31 | Python | Music Recommender using KNN (normalised features, euclidean/cosine, tested) | done |
