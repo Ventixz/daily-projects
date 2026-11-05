@@ -105,3 +105,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-10-31 | Python | Music Recommender using KNN (normalised features, euclidean/cosine, tested) | done |
 | 2026-11-01 | C++ | 486 lines of C++: old-school FPS in a weekend (headless raycaster core, PPM output, tested) | done |
 | 2026-11-03 | Python | Genetic Algorithms (tournament selection, crossover, mutation, elitism, tested) | done |
+| 2026-11-05 | Java | Let's Code a TCP/IP Stack, Part 1: Ethernet & ARP (frame/ARP codec, responder, cache TTL, tested) | done |
