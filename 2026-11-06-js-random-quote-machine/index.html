@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Random Quote Machine</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#1f2937;color:#f9fafb;display:grid;place-items:center;min-height:100vh;margin:0}
+#quote-box{max-width:34rem;padding:2rem;background:#111827;border-radius:12px;margin:1rem}
+#text{font-size:1.4rem;line-height:1.5}#author{text-align:right;color:#9ca3af}
+button,a{background:#3b82f6;color:#fff;border:0;border-radius:6px;padding:.5rem 1rem;text-decoration:none;cursor:pointer;font-size:1rem}
+</style></head>
+<body><div id="quote-box">
+<p id="text"></p><p id="author"></p>
+<button id="new-quote">New quote</button> <a id="tweet-quote" target="_blank" rel="noopener">Tweet</a>
+</div>
+<script src="quotes.js"></script>
+<script>
+const machine = new QuoteMachine();
+function show() {
+  const q = machine.next();
+  document.getElementById('text').textContent = '“' + q.text + '”';
+  document.getElementById('author').textContent = '— ' + q.author;
+  document.getElementById('tweet-quote').href = tweetUrl(q);
+}
+document.getElementById('new-quote').addEventListener('click', show);
+show();
+</script></body></html>
