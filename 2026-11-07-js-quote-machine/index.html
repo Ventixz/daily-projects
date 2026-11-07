@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quote Machine</title>
+<style>body{font-family:system-ui;max-width:36rem;margin:3rem auto;padding:0 1rem}blockquote{font-size:1.4rem}button,a{margin-right:.5rem}</style>
+</head><body>
+<blockquote id="text"></blockquote><p id="author"></p>
+<button id="new">New quote</button><a id="tweet" target="_blank" rel="noopener">Tweet</a>
+<script src="quotes.js"></script>
+<script>
+  const machine = new QuoteMachine();
+  function show() {
+    const q = machine.next();
+    document.getElementById('text').textContent = '\u201c' + q.text + '\u201d';
+    document.getElementById('author').textContent = '\u2014 ' + q.author;
+    document.getElementById('tweet').href = tweetUrl(q);
+  }
+  document.getElementById('new').addEventListener('click', show);
+  show();
+</script>
+</body></html>
