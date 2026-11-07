@@ -6,7 +6,6 @@
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#define CTRL(k) ((k) & 0x1f)
 
 static struct termios orig;
 static void raw_off(void) { tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig); }
