@@ -106,3 +106,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-11-01 | C++ | 486 lines of C++: old-school FPS in a weekend (headless raycaster core, PPM output, tested) | done |
 | 2026-11-03 | Python | Genetic Algorithms (tournament selection, crossover, mutation, elitism, tested) | done |
 | 2026-11-07 | C | Build Your Own Text Editor (kilo-style: row buffer, raw-mode UI, find, save, tested) | done |
+| 2026-11-08 | Go | REST Servers in Go - Part 5: middleware (request ID, logging, recover, token-bucket rate limit, bearer auth, tested) | done |
