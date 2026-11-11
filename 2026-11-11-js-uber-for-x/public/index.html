@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dispatch demo</title>
+<style>
+  body { font: 15px/1.4 system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 16px; }
+  fieldset { margin-bottom: 1rem; }
+  input { width: 7rem; }
+  pre { background: #f4f4f4; padding: .75rem; height: 18rem; overflow: auto; }
+</style>
+</head>
+<body>
+<h1>Dispatch demo</h1>
+<p>Open this page in two tabs: connect one as a <b>driver</b>, one as a <b>rider</b>.</p>
+<fieldset>
+  <label>Role <select id="role"><option>driver</option><option>rider</option></select></label>
+  <label>ID <input id="id" value="alice"></label>
+  <button id="connect">Connect</button>
+</fieldset>
+<fieldset>
+  <label>Lat <input id="lat" value="51.5074"></label>
+  <label>Lng <input id="lng" value="-0.1278"></label>
+  <button data-send="location">Send location (driver)</button>
+  <button data-send="request">Request ride (rider)</button>
+</fieldset>
+<fieldset>
+  <label>Ride ID <input id="ride"></label>
+  <button data-send="accept">Accept</button>
+  <button data-send="decline">Decline</button>
+  <button data-send="complete">Complete</button>
+  <button data-send="cancel">Cancel</button>
+</fieldset>
+<pre id="log"></pre>
+<script>
+  const $ = (id) => document.getElementById(id);
+  let ws;
+  const log = (line) => { $('log').textContent += line + '\n'; $('log').scrollTop = 1e9; };
+  $('connect').onclick = () => {
+    ws = new WebSocket(`ws://${location.host}/ws`);
+    ws.onopen = () => ws.send(JSON.stringify({ type: 'hello', role: $('role').value, id: $('id').value }));
+    ws.onmessage = (e) => {
+      log('← ' + e.data);
+      const m = JSON.parse(e.data);
+      if (m.ride) $('ride').value = m.ride.id;
+    };
+    ws.onclose = () => log('-- closed');
+  };
+  document.querySelectorAll('[data-send]').forEach((b) => b.onclick = () => {
+    const type = b.dataset.send;
+    const msg = { type, lat: +$('lat').value, lng: +$('lng').value, rideId: $('ride').value };
+    ws.send(JSON.stringify(msg));
+    log('→ ' + JSON.stringify(msg));
+  });
+</script>
+</body>
+</html>
