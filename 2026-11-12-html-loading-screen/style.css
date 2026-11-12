@@ -1,0 +1,174 @@
+:root {
+  --bg: #f6f5f2;
+  --fg: #1d1c1a;
+  --muted: #6a6862;
+  --card: #ffffff;
+  --accent: #3a6df0;
+  --accent-2: #e2557a;
+  --track: #e4e2dc;
+  --danger: #c0392b;
+  --fade-ms: 400ms;
+  --spin-ms: 900ms;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --fg: #ecebe6;
+    --muted: #a3a19a;
+    --card: #1f1f1d;
+    --accent: #7aa2ff;
+    --accent-2: #ff7d9c;
+    --track: #33322f;
+    --danger: #ff6b5b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+/* While loading, hide the page so it can't paint half-ready, but only when JS
+   is running: without JS the loader never starts and the page must stay visible. */
+.js body[data-loading] main { visibility: hidden; }
+
+.hero { width: 100%; height: auto; border-radius: 12px; display: block; }
+.hint { color: var(--muted); font-size: 14px; }
+a { color: var(--accent); }
+
+/* ---- Overlay ------------------------------------------------------------ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  padding: 16px;
+  background: var(--bg);
+  z-index: 10;
+  opacity: 1;
+  /* visibility transitions with a delay so the overlay stays clickable-through
+     only after the fade has finished. */
+  transition: opacity var(--fade-ms) ease, visibility 0s linear 0s;
+}
+
+.loader[data-state="visible"],
+.loader[data-state="error"],
+.loader[data-state="leaving"] { display: grid; }
+
+.loader[data-state="leaving"] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--fade-ms) ease, visibility 0s linear var(--fade-ms);
+}
+
+.loader__card {
+  width: min(360px, 100%);
+  padding: 32px 24px;
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 0.08);
+  text-align: center;
+}
+
+.loader__title { font-size: 18px; margin: 16px 0 12px; }
+.loader__status { margin: 12px 0 0; color: var(--muted); font-size: 14px; min-height: 1.5em; }
+.loader[data-state="error"] .loader__status { color: var(--danger); }
+
+.loader__retry {
+  margin-top: 16px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.loader__retry:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 2px; }
+
+/* ---- Spinner: a rotating ring plus three staggered dots ------------------ */
+
+.spinner { position: relative; width: 64px; height: 64px; margin: 0 auto; }
+
+.spinner__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 5px solid var(--track);
+  border-top-color: var(--accent);
+  border-right-color: var(--accent-2);
+  animation: spin var(--spin-ms) linear infinite;
+}
+
+.spinner__dots {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.spinner__dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fg);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+/* Negative delays start each dot mid-cycle, so there's no idle first beat. */
+.spinner__dots i:nth-child(1) { animation-delay: -0.32s; }
+.spinner__dots i:nth-child(2) { animation-delay: -0.16s; }
+
+.loader[data-state="error"] .spinner { display: none; }
+.loader[data-state="error"] .progress__bar { background: var(--danger); }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.4); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Progress bar -------------------------------------------------------- */
+
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--track);
+  overflow: hidden;
+}
+
+.progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  /* transform instead of width: animates on the compositor without re-layout. */
+  transform-origin: left center;
+  transform: scaleX(var(--progress, 0));
+  transition: transform 250ms ease-out;
+}
+
+/* ---- Reduced motion ------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner__ring,
+  .spinner__dots i { animation: none; }
+  .spinner__dots i { opacity: 1; transform: none; }
+  .loader,
+  .loader[data-state="leaving"],
+  .progress__bar { transition: none; }
+}
