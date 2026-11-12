@@ -1,0 +1,9 @@
+{
+  "title": "Loaded.",
+  "items": [
+    "The overlay only appears if loading takes longer than 150 ms.",
+    "Once it appears it stays for at least 600 ms, so it never blinks.",
+    "The bar moves by task weight, not by task count.",
+    "Screen readers hear the status through an aria-live region."
+  ]
+}
