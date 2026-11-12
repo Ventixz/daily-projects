@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading Screen</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Swap the class before first paint so the no-JS fallback never shows the overlay. -->
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
+</head>
+<body data-loading>
+  <div id="loader" class="loader" data-state="idle" role="dialog" aria-modal="true" aria-labelledby="loader-title">
+    <div class="loader__card">
+      <div class="spinner" aria-hidden="true">
+        <span class="spinner__ring"></span>
+        <span class="spinner__dots"><i></i><i></i><i></i></span>
+      </div>
+      <h1 id="loader-title" class="loader__title">Getting things ready</h1>
+      <div id="progress" class="progress" role="progressbar" aria-label="Loading progress"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress__bar"></div>
+      </div>
+      <p id="status" class="loader__status" aria-live="polite">Starting…</p>
+      <button id="retry" class="loader__retry" type="button" hidden>Try again</button>
+    </div>
+  </div>
+
+  <main id="content" aria-busy="true">
+    <img id="hero" class="hero" alt="Abstract gradient waves" width="640" height="200">
+    <h2 id="content-title">Content</h2>
+    <ul id="content-list"></ul>
+    <p class="hint">
+      Try <a href="?latency=60">?latency=60</a> (too fast to show the overlay),
+      <a href="?latency=2500">?latency=2500</a> (slow), or
+      <a href="?fail=content">?fail=content</a> (error and retry).
+    </p>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

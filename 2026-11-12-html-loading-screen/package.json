@@ -1,0 +1,12 @@
+{
+  "name": "html-loading-screen",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CSS loading screen with weighted progress, show-delay and minimum-visible timing, reduced-motion support and error/retry.",
+  "scripts": {
+    "test": "node --test tests/loader.test.js",
+    "test:e2e": "node --test tests/page.test.js",
+    "serve": "node server.js"
+  }
+}
