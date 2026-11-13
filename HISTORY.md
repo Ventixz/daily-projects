@@ -110,3 +110,4 @@ Edit the status yourself as you go — the routine uses it to gauge difficulty d
 | 2026-11-10 | Go | REST Servers in Go, Part 5: middleware (request ID, logging, recover, token-bucket rate limit, bearer auth, tested) | done |
 | 2026-11-11 | JavaScript | How to build your own Uber-for-X App (Node stdlib: hand-written WebSocket server, haversine matching, dispatch state machine, tested) | done |
 | 2026-11-12 | HTML/CSS | Build A Loading Screen (CSS spinner, weighted progress, show-delay/min-visible timing, reduced motion, error/retry, tested) | done |
+| 2026-11-13 | Lua | BYTEPATH: Creation of a Complete Game with Lua and LÖVE — engine core, Parts 1–6 (fixed-timestep loop, timer/tween, action input, rooms & areas, player movement, headless runner, tested; tutorial unreachable) | done |
