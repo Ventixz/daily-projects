@@ -1,0 +1,18 @@
+:root { --bg:#fafaf7; --fg:#1d1d1b; --muted:#6b6b66; --line:#deded8; --accent:#2f6f5e; }
+@media (prefers-color-scheme: dark) { :root { --bg:#171716; --fg:#ececea; --muted:#9a9a94; --line:#33332f; --accent:#7fc4ae; } }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }  /* author "display:flex" would otherwise beat the hidden attribute */
+body { margin:0; font:15px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--fg);
+       display:flex; flex-direction:column; height:100vh; max-width:760px; margin-inline:auto; padding:0 16px; }
+header { display:flex; gap:12px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line); }
+header h1 { font-size:17px; margin:0; }
+#status { color:var(--muted); font-size:13px; margin-left:auto; }
+#log { flex:1; overflow-y:auto; padding:12px 0; margin:0; list-style:none; }
+#log li { padding:2px 0; overflow-wrap:anywhere; }
+#log .sys { color:var(--muted); font-style:italic; }
+#log .nick { font-weight:600; color:var(--accent); }
+#log .err { color:#b3261e; }
+form { display:flex; gap:8px; padding:12px 0; border-top:1px solid var(--line); }
+input { flex:1; font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:6px; background:transparent; color:inherit; }
+button { font:inherit; padding:8px 14px; border:0; border-radius:6px; background:var(--accent); color:var(--bg); cursor:pointer; }
+#members { color:var(--muted); font-size:13px; padding-bottom:4px; }
