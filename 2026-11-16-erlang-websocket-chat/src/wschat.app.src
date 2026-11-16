@@ -1,0 +1,9 @@
+{application, wschat,
+ [{description, "Browser chat over hand-written WebSocket with a long-poll fallback"},
+  {vsn, "0.1.0"},
+  {registered, [wschat_sup, wschat_room, wschat_listener, wschat_poll_sup]},
+  {applications, [kernel, stdlib, crypto]},
+  {mod, {wschat_app, []}},
+  {env, [{port, 8080}, {history_size, 50}, {poll_timeout, 25000},
+         {session_idle, 60000}, {ping_interval, 30000}]},
+  {modules, []}]}.
