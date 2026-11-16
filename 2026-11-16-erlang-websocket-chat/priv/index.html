@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wschat</title>
+<link rel="stylesheet" href="/chat.css">
+</head>
+<body>
+<header><h1>wschat</h1><span id="status">not connected</span></header>
+<ul id="log" aria-live="polite"></ul>
+<div id="members"></div>
+<form id="join">
+  <input id="nick" placeholder="Pick a nickname (letters, digits, _ or -)" maxlength="20" autocomplete="off" required>
+  <button>Join</button>
+</form>
+<form id="say" hidden>
+  <input id="text" placeholder="Message, or /nick NewName" maxlength="2000" autocomplete="off">
+  <button>Send</button>
+</form>
+<script src="/chat.js"></script>
+</body>
+</html>
