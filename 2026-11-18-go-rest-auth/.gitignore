@@ -1,0 +1,4 @@
+# generated locally, never commit
+*.pem
+users.txt
+restauth
