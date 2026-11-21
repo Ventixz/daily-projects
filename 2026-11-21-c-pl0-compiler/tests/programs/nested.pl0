@@ -1,0 +1,36 @@
+{ Static links: inner procedures read and write variables of enclosing
+  procedures, through several levels, while those procedures recurse. }
+var depth;
+
+procedure outer;
+var count;
+
+    procedure middle;
+    var local;
+
+        procedure inner;
+        begin
+            count := count + 1;       { two levels out }
+            local := local * 10;      { one level out }
+            depth := depth + 100      { global }
+        end;
+
+    begin
+        local := 1;
+        call inner;
+        call inner;
+        writeInt local                { 100 }
+    end;
+
+begin
+    count := 0;
+    call middle;
+    writeInt count;                   { 2 }
+    if depth < 300 then call outer    { recursion re-enters with a fresh 'count' }
+end;
+
+begin
+    depth := 0;
+    call outer;
+    writeInt depth
+end.

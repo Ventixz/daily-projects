@@ -1,0 +1,24 @@
+{ Inner declarations shadow outer ones; the outer ones come back afterwards. }
+const x = 1;
+var y;
+
+procedure p;
+var x;
+begin
+    x := 50;
+    y := x + 1
+end;
+
+procedure q;
+const y = 7;
+begin
+    writeInt y
+end;
+
+begin
+    call p;
+    writeInt x;
+    writeInt y;
+    call q;
+    writeInt y
+end.

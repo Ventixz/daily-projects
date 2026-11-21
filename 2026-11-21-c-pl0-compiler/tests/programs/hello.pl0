@@ -1,0 +1,4 @@
+begin
+    writeStr 'Hello, world!';
+    writeChar 10
+end.

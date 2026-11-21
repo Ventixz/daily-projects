@@ -1,0 +1,3 @@
+{ error: line 3: cannot assign to procedure 'p' }
+procedure p; ;
+begin p := 2 end.

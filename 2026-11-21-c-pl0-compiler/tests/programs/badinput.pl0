@@ -1,0 +1,6 @@
+var n;
+begin
+    readInt into n;
+    writeInt n;
+    readInt into n
+end.

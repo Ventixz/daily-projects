@@ -1,0 +1,6 @@
+var z;
+begin
+    z := 0;
+    writeInt 1;
+    writeInt 10 / z
+end.
