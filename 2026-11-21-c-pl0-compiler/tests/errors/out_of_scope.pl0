@@ -1,0 +1,7 @@
+{ error: line 6: undeclared identifier 'inner' }
+procedure p;
+var inner;
+begin inner := 1 end;
+begin
+    inner := 2
+end.

@@ -1,0 +1,6 @@
+var x;
+begin
+    x := 4611686018427387904;
+    writeInt x;
+    x := x * 2
+end.

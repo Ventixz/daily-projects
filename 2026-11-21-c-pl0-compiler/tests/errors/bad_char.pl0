@@ -1,0 +1,2 @@
+{ error: line 2: unexpected character '!' }
+begin writeInt 1 ! end.

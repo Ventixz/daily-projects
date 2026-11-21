@@ -1,0 +1,4 @@
+pl0c
+tests/unit_tests
+build/
+*.o

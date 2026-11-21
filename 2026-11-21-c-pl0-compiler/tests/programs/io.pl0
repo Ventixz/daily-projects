@@ -1,0 +1,16 @@
+{ readInt sums numbers until 0; readChar upper-cases the rest of the input. }
+var n, sum, c;
+begin
+    sum := 0;
+    readInt into n;
+    while n # 0 do begin sum := sum + n; readInt into n end;
+    writeInt sum;
+    readChar into c;          { the newline after the 0 }
+    readChar into c;
+    while c # -1 do
+    begin
+        if c >= 97 and c <= 122 then c := c - 32;
+        writeChar c;
+        readChar into c
+    end
+end.

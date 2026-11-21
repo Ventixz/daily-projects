@@ -1,0 +1,4 @@
+{ error: line 4: procedure 'p' cannot be used as a value }
+var x;
+procedure p; ;
+begin x := p + 1 end.

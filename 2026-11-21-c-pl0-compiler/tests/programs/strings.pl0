@@ -1,0 +1,13 @@
+{ String literals with characters that are special in C, and arrays as strings. }
+var s size 6, i;
+begin
+    writeStr 'It''s "quoted", 100% \n not a newline, ??= no trigraph';
+    writeChar 10;
+    writeStr '';
+    s[0] := 80; s[1] := 76; s[2] := 47; s[3] := 48;   { 'PL/0' }
+    writeStr s;
+    writeChar 10;
+    i := 0;
+    while i < 3 do begin writeChar 65 + i; i := i + 1 end;
+    writeChar 10
+end.
