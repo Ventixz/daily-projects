@@ -1,0 +1,3 @@
+{ error: line 3: expected '.' but found end of file }
+var x;
+begin x := 1 end

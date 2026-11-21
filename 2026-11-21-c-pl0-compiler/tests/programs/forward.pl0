@@ -1,0 +1,21 @@
+{ Mutual recursion needs a forward declaration. }
+var n, answer;
+forward isodd;
+
+procedure iseven;
+begin
+    if n = 0 then answer := 1
+    else begin n := n - 1; call isodd end
+end;
+
+procedure isodd;
+begin
+    if n = 0 then answer := 0
+    else begin n := n - 1; call iseven end
+end;
+
+begin
+    n := 10; call iseven; writeInt answer;
+    n := 7;  call iseven; writeInt answer;
+    n := 7;  call isodd;  writeInt answer
+end.

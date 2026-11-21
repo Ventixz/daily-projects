@@ -1,0 +1,15 @@
+{ Euclid's algorithm and an iterative Fibonacci. }
+var a, b, t, i, f0, f1;
+
+procedure gcd;
+begin
+    while b # 0 do begin t := b; b := a % b; a := t end
+end;
+
+begin
+    a := 1071; b := 462; call gcd; writeInt a;
+    a := 17;   b := 5;   call gcd; writeInt a;
+    f0 := 0; f1 := 1; i := 0;
+    while i < 90 do begin t := f0 + f1; f0 := f1; f1 := t; i := i + 1 end;
+    writeInt f0
+end.

@@ -1,0 +1,2 @@
+{ error: line 2: number too large }
+begin writeInt 9223372036854775808 end.

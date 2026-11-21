@@ -1,0 +1,23 @@
+{ Recursion with a local: each call must get its own copy of 'mine'.
+  If locals were plain C statics this would print 1 four times. }
+var n, result;
+
+procedure fact;
+var mine;
+begin
+    mine := n;
+    if n <= 1 then result := 1
+    else
+    begin
+        n := n - 1;
+        call fact;
+        result := result * mine
+    end;
+    writeInt mine
+end;
+
+begin
+    n := 5;
+    call fact;
+    writeInt result
+end.
