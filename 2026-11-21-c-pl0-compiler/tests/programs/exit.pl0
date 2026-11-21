@@ -1,0 +1,6 @@
+begin
+    writeStr 'before';
+    writeChar 10;
+    exit 3;
+    writeStr 'after'
+end.

@@ -1,0 +1,4 @@
+{ error: line 3: 'x' is already declared on line 2 }
+var x,
+    x;
+.

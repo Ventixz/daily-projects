@@ -1,0 +1,3 @@
+{ error: line 3: array 'a' needs an index }
+var a size 4;
+begin a := 1 end.

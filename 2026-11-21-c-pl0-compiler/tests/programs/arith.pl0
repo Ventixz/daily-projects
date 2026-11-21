@@ -1,0 +1,18 @@
+{ Precedence, unary minus, and C-style truncating division. }
+const k = -7;
+var a;
+begin
+    writeInt 2 + 3 * 4;          { 14 }
+    writeInt (2 + 3) * 4;        { 20 }
+    writeInt 10 - 4 - 3;         { 3: left-associative }
+    writeInt 100 / 10 / 5;       { 2 }
+    writeInt -2 * 3;             { -6 }
+    writeInt 7 / 2;              { 3 }
+    writeInt k / 2;              { -3: truncates toward zero }
+    writeInt k % 3;              { -1: sign follows the dividend }
+    writeInt 7 % (-3);           { 1: unary minus only starts an expression }
+    a := k;
+    writeInt -a;                 { 7 }
+    writeInt +a;                 { -7 }
+    writeInt 9223372036854775807 { the largest value }
+end.

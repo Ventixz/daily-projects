@@ -1,0 +1,3 @@
+{ error: line 3: undeclared identifier 'y' }
+var x;
+begin x := y end.

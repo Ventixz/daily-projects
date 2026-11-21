@@ -1,0 +1,9 @@
+var a size 3, i;
+begin
+    i := 0;
+    while i <= 3 do
+    begin
+        a[i] := i;
+        i := i + 1
+    end
+end.
