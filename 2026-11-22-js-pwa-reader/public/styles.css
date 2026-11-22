@@ -1,0 +1,99 @@
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --text: #1d2327;
+  --muted: #5b6770;
+  --accent: #1f4e5f;
+  --accent-text: #ffffff;
+  --border: #dcd8cf;
+  --ok: #2f6b3a;
+  --warn: #8a4b0f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14191c;
+    --surface: #1d2428;
+    --text: #e6e9eb;
+    --muted: #9aa6ae;
+    --accent: #6fb3c8;
+    --accent-text: #0e1417;
+    --border: #2e383d;
+    --ok: #7fc48b;
+    --warn: #e2a364;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--accent); }
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.brand { font-weight: 700; text-decoration: none; color: var(--text); margin-right: auto; }
+main { max-width: 680px; margin: 0 auto; padding: 16px; }
+button {
+  font: inherit;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+button:disabled { opacity: 0.6; cursor: progress; }
+.pill {
+  font-size: 13px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--warn);
+  color: var(--bg);
+}
+.status { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+.status.error { color: var(--warn); }
+.status:empty { display: none; }
+.cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.card h2 { font-size: 19px; margin: 0 0 4px; line-height: 1.3; }
+.card p { margin: 0 0 6px; }
+.meta { color: var(--muted); font-size: 14px; }
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--ok);
+  color: var(--ok);
+}
+article h1 { line-height: 1.25; margin-bottom: 4px; }
+.banner, .toast {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.toast a { color: var(--bg); }
+.banner button { margin-left: 8px; }
+[hidden] { display: none !important; }

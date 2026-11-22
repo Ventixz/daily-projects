@@ -1,0 +1,16 @@
+{
+  "name": "pwa-reader",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An offline-first blog reader PWA: service worker caching, IndexedDB instant loading, and Web Push with hand-written RFC 8291 encryption and VAPID.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/main.js",
+    "icons": "node scripts/make-icons.js",
+    "publish-article": "node scripts/publish.js",
+    "test": "node --test test/strategies.test.js test/webpush.test.js test/server.test.js",
+    "test:e2e": "node --test test/e2e.test.js"
+  }
+}
