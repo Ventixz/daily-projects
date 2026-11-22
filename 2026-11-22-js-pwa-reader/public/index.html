@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline Reader</title>
+  <meta name="description" content="A small blog reader that works offline.">
+  <meta name="theme-color" content="#1f4e5f">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">Offline Reader</a>
+    <span id="net-status" class="pill" hidden>Offline</span>
+    <button id="push-toggle" type="button" hidden aria-pressed="false">Notify me of new articles</button>
+  </header>
+  <main>
+    <p id="sync-status" class="status" role="status">Loading…</p>
+    <p id="push-status" class="status error" role="alert"></p>
+    <ul id="articles" class="cards"></ul>
+  </main>
+  <div id="update-banner" class="banner" hidden>
+    A new version is ready. <button id="update-button" type="button">Update</button>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="/sw-strategies.js" defer></script>
+  <script src="/idb.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
