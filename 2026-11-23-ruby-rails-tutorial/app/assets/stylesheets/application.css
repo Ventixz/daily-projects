@@ -1,0 +1,70 @@
+/* Hand-written stand-in for the Bootstrap styling the book uses. */
+:root {
+  --fg: #222; --muted: #777; --bg: #fff; --line: #e5e5e5;
+  --nav: #222; --nav-fg: #fff; --primary: #337ab7; --primary-dark: #286090;
+  --ok: #dff0d8; --info: #d9edf7; --warn: #fcf8e3; --danger: #f2dede;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+main.container { padding-top: 24px; }
+
+.navbar { background: var(--nav); color: var(--nav-fg); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; min-height: 52px; }
+#logo { color: var(--nav-fg); font-weight: 700; letter-spacing: -1px; text-transform: uppercase; font-size: 1.4em; }
+#logo:hover { text-decoration: none; color: #ddd; }
+.navbar ul, .footer ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.navbar a, .navbar .link-button { color: #ccc; }
+.navbar form { margin: 0; }
+
+.link-button { background: none; border: 0; padding: 0; font: inherit; color: var(--primary); cursor: pointer; }
+.link-button:hover { text-decoration: underline; }
+form.button_to { display: inline; }
+
+.btn { display: inline-block; padding: 8px 14px; border: 1px solid #ccc; border-radius: 4px; background: #fff; font: inherit; cursor: pointer; }
+.btn-primary { background: var(--primary); border-color: var(--primary-dark); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); text-decoration: none; }
+
+.alert { padding: 10px 14px; border-radius: 4px; margin-bottom: 16px; }
+.alert-success { background: var(--ok); }
+.alert-info { background: var(--info); }
+.alert-warning { background: var(--warn); }
+.alert-danger { background: var(--danger); }
+
+.jumbotron { background: #f4f4f4; padding: 48px 16px; border-radius: 6px; text-align: center; }
+.jumbotron h1 { font-size: 2.4em; margin-top: 0; }
+.jumbotron h2 { font-weight: 400; color: var(--muted); font-size: 1.2em; margin-bottom: 24px; }
+
+.form-narrow { max-width: 420px; }
+.form-narrow label { display: block; margin-top: 12px; font-weight: 600; }
+.form-narrow label.checkbox { font-weight: 400; display: flex; gap: 6px; align-items: center; }
+input[type=text], input[type=email], input[type=password], textarea {
+  width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font: inherit;
+}
+input[type=submit] { margin-top: 16px; }
+#error_explanation ul { color: #a94442; }
+.field_with_errors input { border-color: #a94442; }
+.field_with_errors label { color: #a94442; }
+
+.row { display: flex; gap: 32px; flex-wrap: wrap; }
+.col-sidebar { flex: 1 1 260px; }
+.col-main { flex: 2 1 420px; min-width: 0; }
+.user_info h1 { font-size: 1.4em; margin: 8px 0; }
+.user_info span { display: block; }
+.stats { display: flex; gap: 16px; margin: 12px 0; }
+.stats a { color: var(--fg); }
+.stat { display: block; font-size: 1.3em; }
+.micropost_form textarea { margin-bottom: 8px; }
+
+.users, .microposts { list-style: none; padding: 0; margin: 0; }
+.users li, .microposts li { padding: 12px 0; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
+.gravatar { border-radius: 4px; vertical-align: middle; margin-right: 8px; }
+.microposts .gravatar { float: left; }
+.microposts li { display: flow-root; }
+.microposts .user, .microposts .content, .microposts .timestamp { display: block; margin-left: 60px; }
+.microposts .timestamp { color: var(--muted); font-size: .9em; }
+
+.pagination { margin: 16px 0; display: flex; gap: 16px; align-items: center; }
+.footer { margin-top: 48px; padding: 16px 0; border-top: 1px solid var(--line); color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }

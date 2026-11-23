@@ -1,0 +1,8 @@
+<% if @feed.records.any? %>
+  <ol class="microposts">
+    <%= render partial: "microposts/micropost", collection: @feed.records %>
+  </ol>
+  <%= pagination_links(@feed) %>
+<% else %>
+  <p>Nothing here yet. Post something, or follow someone.</p>
+<% end %>

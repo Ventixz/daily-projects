@@ -1,0 +1,23 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-sidebar">
+    <section class="user_info">
+      <%= gravatar_for @user %>
+      <h1><%= @user.name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats", user: @user %>
+    </section>
+  </aside>
+  <div class="col-main">
+    <h3><%= @title %></h3>
+    <% if @page.records.any? %>
+      <ul class="users follow">
+        <%= render partial: "users/user", collection: @page.records %>
+      </ul>
+      <%= pagination_links(@page) %>
+    <% end %>
+  </div>
+</div>

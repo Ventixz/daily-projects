@@ -1,0 +1,6 @@
+<% provide(:title, "All users") %>
+<h1>All users</h1>
+<ul class="users">
+  <%= render partial: "users/user", collection: @page.records %>
+</ul>
+<%= pagination_links(@page) %>

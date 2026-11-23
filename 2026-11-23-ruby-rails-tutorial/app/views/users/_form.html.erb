@@ -1,0 +1,17 @@
+<%= form_with(model: @user) do |f| %>
+  <%= render "shared/error_messages", object: @user %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, autocomplete: "name" %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, autocomplete: "email" %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, autocomplete: "new-password" %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+
+  <%= f.submit button, class: "btn btn-primary" %>
+<% end %>

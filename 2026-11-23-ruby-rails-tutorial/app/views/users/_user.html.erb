@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for user, size: 50 %>
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= button_to "delete", user, method: :delete, class: "link-button",
+                    form: { onsubmit: "return confirm('Delete #{j user.name}?')" } %>
+  <% end %>
+</li>

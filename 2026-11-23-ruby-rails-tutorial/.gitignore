@@ -1,0 +1,12 @@
+/.bundle
+/log/*
+!/log/.keep
+/tmp/*
+!/tmp/.keep
+/storage/*
+!/storage/.keep
+/db/*.sqlite3*
+/config/master.key
+/config/credentials.yml.enc
+/vendor/bundle
+/public/assets
