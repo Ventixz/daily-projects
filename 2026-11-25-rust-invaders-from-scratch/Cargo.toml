@@ -1,0 +1,19 @@
+[package]
+name = "starfall"
+version = "0.1.0"
+edition = "2021"
+description = "An invaders-style arcade shooter built from scratch: CPU framebuffer, bitmap sprites, fixed-timestep game loop"
+license = "MIT"
+publish = false
+
+[features]
+default = ["window"]
+# The desktop window (minifb). Build with --no-default-features for a
+# dependency-free headless binary; the game itself never needs it.
+window = ["dep:minifb"]
+
+[dependencies]
+minifb = { version = "0.27", optional = true }
+
+[profile.release]
+opt-level = 3
